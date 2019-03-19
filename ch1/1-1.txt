@@ -1,0 +1,18 @@
+First, we need to change the time values in micro seconds
+
+A: 1 s           -> 10^6 micro s
+B: 1 m           -> 6 * 10^7 micro s 
+C: 1 h           -> 36 * 10^7 micro s
+D: 1 m (30 days) -> 2592 * 10^8 micro s
+E: 1 y           -> 94608 * 10^9 micro s
+F: 1 century     -> 94608 * 10^11 micro s
+
+          A
+lg(n)    e^(10^6)
+sqrt(n)  10^12
+n        10^6
+n*lg(n)  10^5
+n^2      10^3
+n^3      10^2
+2^n      lg(10^6) / lg(2)
+n!       maybe using stirling's approximation ?
