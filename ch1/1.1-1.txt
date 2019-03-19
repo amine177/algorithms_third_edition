@@ -1,0 +1,6 @@
+Real world examples that require sorting:
+  - A priority queue of patients in a hospital
+  - Ordering a reading list by taste
+Real world examples that require computing the convex hull:
+  - Estimating the position of debris of a plane crash
+  - Calculating the size of building blocks in a map
