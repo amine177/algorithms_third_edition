@@ -1,0 +1,9 @@
+A stack.
+Pros:
+  - Can represent reverse polish computations easily
+  - Can represent nested function calls
+  - Abstracts stack based virtual machines easily
+  - Simple push and pop
+Cons:
+  - Arbitrary access is difficult wihtout added logic (base pointer)
+  - Hard to deal with in a parallel context (difficult partitioning)
