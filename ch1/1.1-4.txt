@@ -1,0 +1,8 @@
+The traveling-salesman problem incorporates the concept
+of a "global" shortest path, one that permits to go
+through all destinations with the least resource consuming
+way, for that we would need to calculate a shortest path
+in one way or another.
+The difference is that the shortest-path isn't always conserned
+with going through all possible destinations, so it becomes
+different from the traveling-slaesman problem.
