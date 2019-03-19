@@ -1,0 +1,4 @@
+Other measures of efficiency other than speed are:
+  - Memory usage (space)
+  - Slow access memory hits (memory latency)
+  - Network usage (network latency)
