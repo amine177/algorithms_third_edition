@@ -2,10 +2,10 @@
 
 
 def find(l, e):
-    for i in l:
-        if i == e:
-            return True
-    return False
+    for i in range(len(l)):
+        if l[i] == e:
+            return i
+    return None
 
 
 if __name__ == "__main__":

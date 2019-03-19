@@ -2,5 +2,5 @@ LINEAR-SEARCH(A, e)
 
   for i = 1 to A.length
     if A[i] == e then
-      return True
-  return False
+      return i
+  return Nil
