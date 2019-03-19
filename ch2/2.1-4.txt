@@ -1,0 +1,18 @@
+SUM-BIN(A, B)
+  C = Array[A.len + 1]
+  carry = 0
+  for i =  A.len to 1
+    if A[i] == 1 and B[i] == 1 then
+      C[i] = carry
+      carry = 1
+    else if carry == 1 and (A[i] == 1 or B[i] == 1) then
+        C[i] = 0
+        carry = 1
+    else if A[i] == 0 and B[i] == 0 then
+      C[i] = carry
+      carry = 0
+    else
+      C[i] = 1
+
+  C[1] = carry
+  return C
