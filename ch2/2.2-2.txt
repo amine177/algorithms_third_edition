@@ -1,0 +1,11 @@
+SELECTION-SORT(A)
+  min = A[1]                c1    1
+  min_index = 1             c2    1
+  for i = 2 to A.length     c3    n
+    for j = i to A.length   c4    sum(2, n, ti)
+      if A[j] < min then    c5    sum(2, n, ti-1)
+        min = A[j]          c6    sum(2, n, ti-1)
+        min_index = j       c7    sum(2, n, ti-1)
+    temp = A[i]             c8    n - 1
+    A[i] = min              c9    n - 1
+    A[min_index] = temp     c10   n - 1
