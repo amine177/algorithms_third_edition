@@ -1,0 +1,5 @@
+average = sum(number_of_iterations)/n
+        = 1 + 2 + ... + n / n
+        = (n + 1)/2
+
+worst case : n^2 / n = n
