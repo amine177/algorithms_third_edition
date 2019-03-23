@@ -1,11 +1,35 @@
 SELECTION-SORT(A)
-  min = A[1]                c1    1
-  min_index = 1             c2    1
-  for i = 2 to A.length     c3    n
-    for j = i to A.length   c4    sum(2, n, ti)
-      if A[j] < min then    c5    sum(2, n, ti-1)
-        min = A[j]          c6    sum(2, n, ti-1)
-        min_index = j       c7    sum(2, n, ti-1)
-    temp = A[i]             c8    n - 1
-    A[i] = min              c9    n - 1
-    A[min_index] = temp     c10   n - 1
+  for i = 1 to A.length             c1   n + 1
+    min_index = i                   c2   n
+    for j = i + 1 to A.length       c3   sum(1, n, n-i)
+      if A[j] < A[min_index] then   c4   sum(1, n, n-i+1)
+        min_index = j               c5   sum(1, n, tj(n-i+1))
+    if (min_index != i) then        c6   n
+      temp = A[i]                   c7   sum(1, n, ti)
+      A[i] = min                    c8   sum(1, n, ti)
+      A[min_index] = temp           c9   sum(1, n, ti)
+
+T(n) = c1 (n+1) + c2 n + c3 sum(1, n, n-i)
+     + c4 sum(1, n, n-i+1) + c4 sum(1, n, n-i+1)
+     + c5 sum(1, n, tj(n-i+1)) + c6 n
+     + c7 sum(1, n, ti) + c8 sum(1, n, ti)
+     + sum(1, n, ti)
+
+given :
+sum(1, n, n-i) = sum(0, n-1, i) = (n - 1) n / 2
+sum(1, n, n-i+1) = sum(0, n-1, i-1) = n * (n-3) / 2
+then:
+T(n) = c1 n + c1 + c2 n + c3/2 n^2 - c3/2 n
+     + c4/2 n^2 - (3/2)*c4 n + c5 sum(1, n, tj(n-i+1)
+     + c6 n +  c7 sum(1, n, ti) + c8 sum(1, n, ti)
+     + sum(1, n, ti)
+
+Best case :
+ tj = 0 for every j in [i+1, n] for every i in [1, n]
+ ti = 0 for every i in [1, n]
+ T(n) = a * n ^ 2 + b * n + c
+Worst case :
+ tj = 1 for every j in [i+1, n] for every i in [1, n]
+    -> sum(1, n, tj(n-i+1)) = n * (n-3)/2
+ ti = 1 for every i in [1, n] -> sum(1, n, ti) = n
+ T(n) = a * n ^ 2 + b * n + c
