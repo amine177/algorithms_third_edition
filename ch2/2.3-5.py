@@ -1,4 +1,6 @@
 def search(a, e):
+    if len(a) == 0:
+        return False
     if len(a) == 1:
         if a[0] == e:
             return True
