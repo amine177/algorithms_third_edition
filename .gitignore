@@ -1,6 +1,7 @@
 *
 !.gitignore
 !*.py
+!*.pdf
 !ch*
 !*.txt
 !*.png
