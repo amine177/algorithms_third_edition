@@ -1,0 +1,16 @@
+INSERTION-SORT(A)
+
+  if A.length <= 1 then
+    return A
+  else
+    B = array(A.length)
+    B = COPY(A, 0, A.length - 1)
+    B[B.length - 1] = A[A.length[1]]
+    A = INSERTION-SORT(B)
+    tmp = A[A.length - 1]
+    i = A.length - 2
+    while i >= 0 AND A[i] > tmp do
+      A[i+1] = A[i]
+      i = i - 1
+    A[i+1] = tmp
+    return A
