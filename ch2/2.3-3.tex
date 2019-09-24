@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\begin{equation}
+T(n) =
+\begin{cases}
+2 &if \ n = 2 \\
+2T(\frac{n}{2}) \ + n & if n = 2^k, \ for \ k > 1
+\end{cases}
+\end{equation}
+\begin{align*}
+T(n) = 2T(\frac{n}{2}) + n \\
+and\\
+T(\frac{n}{2}) = 2T(\frac{n}{4}) + \frac{n}{2}
+&\Rightarrow T(n) = 4T(\frac{n}{4}) + 2n \\
+Knowing\\
+T(n/4) = 2T(\frac{n}{8}) + \frac{n}{4}
+&\Rightarrow T(n) = 8T(\frac{n}{8}) + 3n \\
+\ldots\\
+&\Rightarrow T(n) = 2^i T(\frac{n}{2^i}) + in\\
+We \ have:\\
+T(n/2^i) = 2  & \Leftrightarrow \frac{n}{2^i} = 2 \\
+\frac{n}{2^i} = 2   & \Leftrightarrow i + 1 = \frac{lg_2(n)}{lg_2(2)}\\
+Therfore\\
+T(n) = 2^{lg_2(n)}  + (lg_2(n) - 1) n  &
+\Leftrightarrow T(n) = n (1 - 1 + lg_2(n)) \\
+& \Leftrightarrow T(n) = nlg_2(n)
+\end{align*}
+\end{document}
