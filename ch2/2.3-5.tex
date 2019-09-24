@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{amsmath}
 \begin{document}
 \noindent\textbf{BINARY-SEARCH}(A, e, begin, end)\\
 \indent if begin == end then\\
@@ -9,5 +10,14 @@
 \indent if A[middle] > e then \\
 \indent \indent \indent return BINARY-SEARCH(A, e, begin, middle)\\
 \indent if A[middle] < e then\\
-\indent \indent \indent return BINARY-SEARCH(A, e, middle, end)\\
+\indent \indent \indent return BINARY-SEARCH(A, e, middle, end)\\\\
+\begin{equation}
+T(n) =
+\begin{cases} c &if \ n = 1\\
+  T(n/2)  + c &if \ n > 1\\
+\end{cases}
+\end{equation}\\
+\noindent By reccurance, if $n > 1, T(n) = \sum_{k=0}^{lg(n)}c$\\
+$\Rightarrow T(n) = clg(n)$\\
+$\Rightarrow The \ algorithm \ is \ \Theta(lgn)$
 \end{document}
