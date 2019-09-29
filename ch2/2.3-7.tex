@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\noindent  $\star$Describe a $\Theta(n\lg{n})$-time algorithm that, given a set $S$ of $n$
+integers and another integer $x$, determines whether or not there exists two
+elements of $S$ whose sum is exactly $x$.\\\\
+\noindent\textbf{SEARCH-SUM(S, x)}\\
+\indent MERGE-SORT(S)\\
+\indent for i = 1 to S.length\\
+\indent\indent index = BINARY-SEARCH(S, x - S[i], 1, S.length)\\
+\indent\indent if index != NIL\\
+\indent\indent\indent return index\\
+\indent return NIL
+\end{document}
