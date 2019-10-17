@@ -1,0 +1,17 @@
+\documentclass{article}
+\begin{document}
+\noindent\textbf{LINEAR-SEARCH(A, v)}\\
+\indent k = NIL\\
+\indent for (i = 1 to A.length)\\
+\indent\indent if (A[i] == v)\\
+\indent\indent\indent k = i\\
+\indent\indent\indent break\\
+\indent return k\\\\
+
+\noindent\textbf{Proof of correctness:}\\\\
+\noindent\textbf{Loop invariant:} at the start of every iteration we have : v not in \\A[1..i-1].\\
+\textbf{Initialization:} A[1..0] is an empty array and doesn't contain v.\\
+\textbf{Maintenance:} if k is not in A[1 .. i-1] and A[i] is equal to v, then k = i and the iteration stops. Otherwise it continues with k = NIL and the iteration continues with k not in A[1 .. i].\\
+\textbf{Termination:} if k = A.length + 1, then v is not in A[1 .. n]. Otherwise the program terminates once we find v.
+
+\end{document}
