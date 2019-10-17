@@ -1,0 +1,20 @@
+\documentclass{article}
+\begin{document}
+\noindent Note: A[1 $\rightarrow$ A.length]\\
+
+\noindent\textbf{INSERTION-SORT(A)}\\
+\indent for (j = 2 to A.length)\\
+\indent\indent itemToInsert = A[j]\\
+\indent\indent k = j - 1\\
+\indent\indent while(k $>$ 0 and A[k] $>$ itemToInsert)\\
+\indent\indent\indent A[k+1] = A[k]\\
+\indent\indent\indent k = k - 1\\
+\indent\indent A[k+1] = itemToInsert\\\\
+
+\noindent\textbf{Proof of correctness:}\\\\
+\textbf{Loop invariant:} We show that for every j, the subarray A[1, j - 1] is sorted.
+\textbf{Initialization:} If j = 2, the array A[1, 2 - 1] is sorted.\\
+\textbf{Maintenance:} If A[1, j - 1] is sorted then k will hold either 0 (meaning A[j] is the smallest value) or the index of the first element of A[1, j - 1] which is smaller than A[j], then A[j] gets inserted at either 1 or after the first element that is smaller than it. Thus A[1, j - 1] maintains the state of being sorted.\\
+\textbf{Termination:} j = A.length + 1, A[1, A.length] is therfore sorted. Therfore the algorithm is correct.
+
+\end{document}
