@@ -23,5 +23,27 @@
 \indent\indent\indent j = j - 1\\
 \indent\indent if k == 0\\
 \indent\indent\indent k = k - 1\\
-\indent\indent i = i - 1\\
+\indent\indent i = i - 1\\\\
+
+\noindent \textbf{Loop invariant:} at the start of every
+iteration, C[i-1 .. n] will always have the sum of bits of
+A[j-1 .. A.length] and B[k-1 .. B.length]\\
+
+\noindent \textbf{Initialization:} C[ n-1 .. n] is the null array,
+therefore it contains the sum of A[A.length-1, A.length]=null
+and B[B.length-1 .. B.length]=null\\
+\noindent \textbf{Maintenance:} Suppose C[i .. n] contains the sum
+of B[k .. B.length] and \\A[j-1 .. A.length] and the carry, 
+if j and k are still greater than the lower bounds of both A and B
+then C[i] = (B[k] + A[j] + carry) mod 2, which means that C[i]
+will hold the sum of the tow plus whatever carry out there from
+the previous operation. If we already summed either of all 
+elements of A, or B or both, C[i] will take the carry, as 
+if A[j] or B[k] or both of them are zero.\\
+Therefore C[i] will hold the result of the sum of A[j] and B[k]
+plus the carry. \\Therefore C[i-1 .. n] will contain the sum of
+B[k-1 .. B.length] and \\A[j-1 .. A.length] and the  carry\\
+\noindent \textbf{Termination:} On termination we
+have i = 0, k = 0, j = 0 , therefore C[1 .. n] contains the sum of
+B[1 .. B.length] and A[ 1 .. A.length].\\
 \end{document}
