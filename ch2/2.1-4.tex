@@ -1,0 +1,27 @@
+\documentclass{article}
+\begin{document}
+\noindent\textbf{ADD-BITS(A, B)}\\
+\indent n = MAX(A.length, B.length) + 1\\
+\indent C = ARRAY(INTEGER, n)\\
+\indent carry = 0\\
+\indent i = C.length\\
+\indent j = A.length\\
+\indent k = B.length\\
+\indent while i <= n\\
+\indent\indent if j > 0 and k > 0\\
+\indent\indent\indent C[i] = (A[j] + B[k] + carry) mod 2 + carry\\
+\indent\indent\indent carry = (A[j] + B[k] + carry) / 2\\
+\indent\indent else if j == 0 and k == 0\\
+\indent\indent\indent C[i] = carry\\
+\indent\indent else if j = 0\\
+\indent\indent\indent C[i] = (B[k] + carry) mod 2\\
+\indent\indent\indent carry = (B[k] + carry)  / 2\\
+\indent\indent else\\
+\indent\indent\indent C[i] = (A[j] + carry) mod 2\\
+\indent\indent\indent carry = (A[j] + carry)  / 2\\
+\indent\indent if j == 0\\
+\indent\indent\indent j = j - 1\\
+\indent\indent if k == 0\\
+\indent\indent\indent k = k - 1\\
+\indent\indent i = i - 1\\
+\end{document}
