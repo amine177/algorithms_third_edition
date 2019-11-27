@@ -1,0 +1,31 @@
+\documentclass{article}
+\begin{document}
+\noindent\begin{tabular} {l l l}
+INSERTION-SORT(A) &  cost & times\\
+\indent for j = 2 to A.length & $c_1$ & $n =  n - 2 + 1 + 1$ ( for the
+last test)\\
+\indent\indent current = A[j] & $c_2$ & $n - 1$\\
+\indent\indent i = j - 1 & $c_3$ & $n - 1$\\
+\indent\indent while (i $>$ 0 and A[i] $>$ current) & $c_4$ &
+$\sum_{k=0}^{n}t_j$\\
+\indent\indent\indent A[i + 1] = A[i] & $c_5$ &
+$\sum_{k=0}^{n}(t_j - 1)$\\
+\indent\indent\indent i = i - 1 & $c_6$ &
+$\sum_{k=0}^{n}(t_j - 1)$\\
+\indent\indent A[i + 1] = current & $c_7$ & $n - 1$\\
+\end{tabular}
+\\\\\\
+\noindent Running time complexity:\\
+$T(n) = c_1n + c_2(n - 1) + c_3( n - 1) + c_4\sum_{k=0}^{n}t_j + c_5\sum_{k=0}^{n}(t_j - 1)
++ c_6\sum_{k=0}^{n}(t_j - 1)\\ + c_7(n - 1)$\\\\
+\noindent A worst case execution will lead to:\\
+$\sum_{k=0}^{n} t_j = 1 - 1 + 2 + 3 + .. + n = 
+\frac{n(n + 1)}{2} - 1$\\
+$\sum_{k=0}^{n}(t_j - 1) = 1 + 2 + .. + n - 1 = \frac{n(n - 1)}{2}$
+\\\\
+$\Rightarrow T(n) = \frac{(c_4 + c_5 + c_6)}{2} n^2
++ (c_1 + c_2 + c_3 + \frac{c_4}{2} - \frac{c_5 + c_6}{2} + c_7) n
+- (c_2 + c_3 + c_4 + c_7) $\\
+$\Rightarrow T(n) = An^2 + Bn + C$
+\end{document}
+
